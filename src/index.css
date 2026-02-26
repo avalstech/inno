@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 1rem;
+
+  /* Core */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Brand: Navy + Gold */
+  --navy: 214 68% 18%;
+  --navy-deep: 215 78% 12%;
+  --navy-light: 214 56% 28%;
+
+  --gold: 45 93% 56%;
+  --gold-bright: 45 100% 60%;
+  --gold-dark: 41 90% 45%;
+  --gold-muted: 45 60% 65%;
+
+  --primary: var(--navy);
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 220 14% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 45 93% 56%;
+  --accent-foreground: 215 78% 12%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 16% 90%;
+  --input: 214 16% 90%;
+  --ring: 214 68% 18%;
+
+  --success: 142 72% 29%;
+  --warning: 38 92% 50%;
+  --info: 201 89% 48%;
+
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 222 47% 11%;
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 14% 96%;
+  --sidebar-accent-foreground: 222 47% 11%;
+  --sidebar-border: 214 16% 90%;
+  --sidebar-ring: var(--navy);
+}
+
+.dark {
+  --background: 215 78% 8%;
+  --foreground: 0 0% 98%;
+
+  --card: 215 78% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 215 78% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 45 93% 56%;
+  --primary-foreground: 215 78% 12%;
+
+  --secondary: 215 28% 16%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 215 28% 16%;
+  --muted-foreground: 215 20% 70%;
+
+  --accent: 45 93% 56%;
+  --accent-foreground: 215 78% 12%;
+
+  --border: 215 28% 20%;
+  --input: 215 28% 20%;
+  --ring: 45 93% 56%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur border border-white/40 shadow-sm;
+  }
+
+  .grid-fade {
+    background-image:
+      radial-gradient(circle at 1px 1px, hsl(var(--border)) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+
+  .shine {
+    background-image: linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.65) 45%,
+      rgba(255, 255, 255, 0) 80%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.4s linear infinite;
+  }
+}
